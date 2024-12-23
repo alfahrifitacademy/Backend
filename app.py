@@ -26,17 +26,17 @@ def before_request():
         return None  # Lewati autentikasi untuk route ini
     return None
 
-    # Terapkan autentikasi untuk semua route lainnya
+    # # Terapkan autentikasi untuk semua route lainnya
     # auth = request.authorization  # Mendapatkan data auth dari header
     # if not auth or not auth.username or not auth.password:
     #     return jsonify({"message": "Missing or invalid credentials"}), 401
 
-    # Cek user di database
+    # # Cek user di database
     # user = User.query.filter_by(username=auth.username).first()
     # if not user or not check_password_hash(user.password, auth.password):
     #     return jsonify({"message": "Invalid username or password"}), 401
 
-    # Simpan user ke dalam request context untuk digunakan di endpoint
+    # # Simpan user ke dalam request context untuk digunakan di endpoint
     # request.current_user = user
 
 app.register_blueprint(book_bp)

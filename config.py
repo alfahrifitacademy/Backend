@@ -4,7 +4,7 @@ from flask_cors import CORS
 
 #init db connect
 app = Flask(__name__)
-CORS(app, resources={r"/api/*": {"origins": "*"}}, supports_credentials=True)
+CORS(app, resources={r"/api/*": {"origins": "http://localhost:5173"}}, supports_credentials=True)
 
 app.config['JWT_SECRET_KEY'] = 'p~uTBD3-;m27(!jhz?v^,r'
 
