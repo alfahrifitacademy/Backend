@@ -75,8 +75,8 @@ def add_book():
 
 # Update a book (PUT)
 @jwt_required()
-def update_book(id):
-    book = Book.query.get(id)
+def update_book(book_id):
+    book = Book.query.get(book_id)
     if not book:
         return jsonify({'error': 'Book not found'}), 404
 
