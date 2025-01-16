@@ -43,7 +43,7 @@ def get_users():
             'fullname': user.fullname,
             'password' : user.password,
             'status': user.status,
-            'level_name': level.name if level else "No Level"
+            'level_name': level.level_name if level else "No Level"
         })
         
     response ={
@@ -70,7 +70,7 @@ def get_user(user_id):
         'fullname': user.fullname,
         'password' : user.password,
         'status': user.status,
-        'level_name': level.name if level else "No Level"
+        'level_name': level.level_name if level else "No Level"
     }
     
     response ={
@@ -124,3 +124,9 @@ def delete_user(user_id):
     db.session.delete(user)
     db.session.commit()
     return jsonify({'message': 'User deleted successfully!'})
+
+# Get all levels
+def get_levels():
+    levels = Level.query.all()
+    level_list = [{'id': level.id_level, 'name': level.level_name} for level in levels]
+    return jsonify({'status': 'success', 'data': level_list}), 200

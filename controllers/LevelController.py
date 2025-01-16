@@ -46,3 +46,9 @@ def delete_level(id):
     db.session.delete(level)
     db.session.commit()
     return jsonify({'message': 'Level deleted successfully!'}), 200
+
+# Get all levels
+def get_levels():
+    levels = Level.query.all()
+    level_list = [{'id': level.id_level, 'name': level.level_name} for level in levels]
+    return jsonify({'status': 'success', 'data': level_list}), 200

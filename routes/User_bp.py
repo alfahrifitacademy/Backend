@@ -1,4 +1,4 @@
-from flask import Blueprint
+from flask import Blueprint, render_template
 from controllers.UserController import login, get_users, get_user , update_user, delete_user, add_user
 
 user_bp = Blueprint('User_bp', __name__)
@@ -20,3 +20,6 @@ user_bp.route('/api/users/<int:user_id>',methods=['PUT'])(update_user)
 
 #delete user
 user_bp.route('/api/users/<int:user_id>',methods=['DELETE'])(delete_user)
+
+# Halaman CRUD untuk user
+user_bp.route('/users', methods=['GET'])(lambda: render_template('user_crud.html'))

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manajemen User</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Daftar User</h1>
+        <button id="addUserButton" class="btn btn-primary">Tambah User</button>
+
+        <!-- Tabel User -->
+        <table>
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Username</th>
+                    <th>Fullname</th>
+                    <th>Status</th>
+                    <th>Level</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody id="user-table-body">
+                <!-- Data akan dimuat menggunakan JavaScript -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Modal untuk Tambah/Edit User -->
+    <div id="userModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" id="closeModal">&times;</span>
+            <h2 id="modalTitle">Tambah User</h2>
+            <form id="userForm">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="fullname">Fullname:</label>
+                <input type="text" id="fullname" name="fullname" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <label for="status">Status:</label>
+                <select id="status" name="status" required>
+                    <option value="active">Active</option>
+                    <option value="inactive">Inactive</option>
+                </select>
+
+                <label for="level_id">Level:</label>
+                <select id="level_id" name="level_id" required>
+                    <!-- Opsi level akan diisi oleh JavaScript -->
+                </select>
+
+                <button type="submit" id="saveButton" class="btn btn-success">Simpan</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>

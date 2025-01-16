@@ -17,3 +17,5 @@ level_bp.route('/api/level/<int:id>',methods=['PUT'])(update_level)
 
 #delete level
 level_bp.route('/api/level/<int:id>',methods=['DELETE'])(delete_level)
+
+level_bp.route('/api/levels', methods=['GET'])(get_levels)
